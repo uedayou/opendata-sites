@@ -15,7 +15,7 @@ const { sites } = useSiteList()
       </ol>
     </nav>
     <v-card class="md:mx-4 my-4 px-1 py-20 w-full">
-      <h1 class="text-2xl md:text-4xl text-center">オープンデータカタログサイト検索</h1>
+      <h1 class="text-2xl md:text-4xl text-center">オープンデータカタログ検索</h1>
     </v-card>
     <List :sites="sites" :top="true" v-if="sites" />
   </v-container>
