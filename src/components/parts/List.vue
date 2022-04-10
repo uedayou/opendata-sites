@@ -55,10 +55,10 @@ watch([type, pref], () => (query.value = ''))
       :key="item.id"
       class="p-4 grid items-center text-center select-none"
     >
-      <div v-if="top" @click="router.push(`/${item.type}`)" class="flex-none text-sm text-gray-500 cursor-pointer">
+      <div v-if="top" @click="router.push(`/${item.type}`)" class="text-sm text-gray-500 cursor-pointer">
         {{ getTypename(item.type) }}
       </div>
-      <div class="grow grid text-center items-center cursor-pointer" @click="router.push(`/${item.type}/${item.id}`)">
+      <div class="grid text-center items-center cursor-pointer" @click="router.push(`/${item.type}/${item.id}`)">
         <span class="line-clamp-2">{{ item.name }}</span>
         <span class="line-clamp-2 text-sm text-gray-500">{{ item.author }}</span>
       </div>
