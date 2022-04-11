@@ -28,7 +28,7 @@ watch(
           <v-card
             v-for="pref in PREF_LIST"
             @click="router.push(`/local-government/${pref}`)"
-            class="p-4 grid text-center items-center cursor-pointer"
+            class="p-4 text-center cursor-pointer"
           >
             {{ pref }}
           </v-card>

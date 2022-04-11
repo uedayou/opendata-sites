@@ -42,11 +42,7 @@ const types = [
       <v-expansion-panel-title class="select-none"> 提供団体 </v-expansion-panel-title>
       <v-expansion-panel-text>
         <div class="grid sm:grid-cols-4 gap-4 items-stretch w-full">
-          <v-card
-            v-for="type in types"
-            @click="router.push(`/${type.id}`)"
-            class="p-4 grid text-center items-center cursor-pointer"
-          >
+          <v-card v-for="type in types" @click="router.push(`/${type.id}`)" class="p-4 text-center cursor-pointer">
             {{ type.name }}
           </v-card>
         </div>
