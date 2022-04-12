@@ -28,7 +28,7 @@ watch([type, pref], () => (query.value = ''))
 </script>
 
 <template>
-  <TypePanel :show="true" v-if="top" />
+  <TypePanel v-if="top" />
   <PrefPanel :show="!top && !pref" v-if="top || type === 'local-government'" />
   <div class="md:mx-4 my-4">
     <v-text-field

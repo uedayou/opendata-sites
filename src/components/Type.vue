@@ -28,7 +28,7 @@ const getTitle = () => (pref.value ? `${title.value}(${pref.value})` : title.val
     </nav>
     <v-card class="md:mx-4 my-4 px-1 py-20">
       <h1 class="text-2xl md:text-4xl text-center">
-        {{ getTitle() + ' のカタログサイト一覧' }}
+        {{ `${getTitle()} のカタログサイト一覧` }}
       </h1>
     </v-card>
     <List :sites="sites" :type="type" :pref="pref" v-if="sites" />

@@ -4,7 +4,7 @@ import useSiteList from '@/common/useSiteList'
 const router = useRouter()
 const { site, title, type, typename } = useSiteList()
 const getURI = (data: unknown) =>
-  'https://www.data.go.jp/multidatabases/multidatabase_contents/detail/' + data.typeid + '/' + data.id
+  `https://www.data.go.jp/multidatabases/multidatabase_contents/detail/${data.typeid}/${data.id}`
 const getLicenseUrl = (license: string) => {
   switch (license) {
     case '政府標準利用規約（第 2.0 版）':

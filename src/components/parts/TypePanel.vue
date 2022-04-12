@@ -6,7 +6,7 @@ const props = withDefaults(
     show?: boolean
   }>(),
   {
-    show: false,
+    show: true,
   }
 )
 const { show } = toRefs(props)
