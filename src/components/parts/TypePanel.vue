@@ -12,10 +12,7 @@ const props = withDefaults(
 const { show } = toRefs(props)
 const router = useRouter()
 const panel = ref([show.value ? 0 : 1])
-watch(
-  () => show.value,
-  () => (panel.value = [show.value ? 0 : 1])
-)
+watch(show, () => (panel.value = [show.value ? 0 : 1]))
 const types = [
   {
     id: 'central-government',
@@ -37,11 +34,11 @@ const types = [
 </script>
 
 <template>
-  <v-expansion-panels class="md:mx-4 my-4" v-model="panel">
+  <v-expansion-panels class="md:px-4 my-4" v-model="panel">
     <v-expansion-panel>
       <v-expansion-panel-title class="select-none"> 提供団体 </v-expansion-panel-title>
       <v-expansion-panel-text>
-        <div class="grid sm:grid-cols-4 gap-4 items-stretch w-full">
+        <div class="grid sm:grid-cols-4 gap-4 items-stretch">
           <v-card v-for="type in types" @click="router.push(`/${type.id}`)" class="p-4 text-center cursor-pointer">
             {{ type.name }}
           </v-card>

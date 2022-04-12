@@ -23,17 +23,14 @@ const page = ref(1)
 const itemsPerPage = ref(30)
 const router = useRouter()
 const { results, search, reset } = useSearch(sites)
-watch(
-  () => results.value,
-  () => (page.value = 1)
-)
+watch(results, () => (page.value = 1))
 watch([type, pref], () => (query.value = ''))
 </script>
 
 <template>
   <TypePanel :show="true" v-if="top" />
   <PrefPanel :show="!top && !pref" v-if="top || type === 'local-government'" />
-  <div class="md:mx-4 my-4 w-full flex">
+  <div class="md:mx-4 my-4">
     <v-text-field
       label="検索"
       placeholder="検索したい語を入力してください"
@@ -48,8 +45,8 @@ watch([type, pref], () => (query.value = ''))
     ></v-text-field>
   </div>
 
-  <div class="w-full md:mx-4 my-4 py-10 text-center" v-if="query && results?.length === 0">検索結果がありません。</div>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 md:mx-4 my-4 gap-4 items-stretch w-full" v-if="results">
+  <div class="md:mx-4 my-4 py-10 text-center" v-if="query && results?.length === 0">検索結果がありません。</div>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 md:mx-4 my-4 gap-4 items-stretch" v-if="results">
     <v-card
       v-for="item in results.slice((page - 1) * itemsPerPage || 0, page * itemsPerPage)"
       :key="item.id"

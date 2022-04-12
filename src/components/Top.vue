@@ -14,7 +14,7 @@ const { sites } = useSiteList()
         <li class="px-2">Home</li>
       </ol>
     </nav>
-    <v-card class="md:mx-4 my-4 px-1 py-20 w-full">
+    <v-card class="md:mx-4 my-4 px-1 py-20">
       <h1 class="text-2xl md:text-4xl text-center">オープンデータカタログ検索</h1>
     </v-card>
     <List :sites="sites" :top="true" v-if="sites" />

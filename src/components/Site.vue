@@ -24,20 +24,22 @@ const getLicenseUrl = (license: string) => {
         <li class="px-2 cursor-pointer" @click="router.push(`/${type}`)">
           {{ typename }}
         </li>
-        <li v-if="site?.pref">/</li>
-        <li v-if="site?.pref" @click="router.push(`/${type}/${site.pref}`)" class="px-2 cursor-pointer">
-          {{ site.pref }}
-        </li>
+        <template v-if="site?.pref">
+          <li>/</li>
+          <li @click="router.push(`/${type}/${site.pref}`)" class="px-2 cursor-pointer">
+            {{ site.pref }}
+          </li>
+        </template>
         <li>/</li>
         <li class="px-2 text-grey">{{ title }}</li>
       </ol>
     </nav>
-    <v-card class="md:mx-4 my-4 md:px-4 py-20 w-full">
+    <v-card class="md:mx-4 my-4 md:px-4 py-20">
       <h1 class="text-2xl md:text-4xl text-center">
         {{ title }}
       </h1>
     </v-card>
-    <v-card class="md:mx-4 my-4 md:px-4 py-4 w-full">
+    <v-card class="md:mx-4 my-4 md:px-4 py-4">
       <v-table v-if="site">
         <tbody>
           <tr>

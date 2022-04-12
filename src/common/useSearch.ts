@@ -13,7 +13,7 @@ function useSearch(data: any) {
     index.value = null
   }
   onMounted(initialize)
-  watch(() => data.value, initialize)
+  watch(data, initialize)
 
   const createIndex = () => {
     const _index = new Document({
